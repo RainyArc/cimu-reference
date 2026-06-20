@@ -26,20 +26,8 @@ are not valid inside nested regular blocks.
 - DIALOG TEXT-ANNOTATION?
 
 Text is story text emitted by a scene. A text statement starts with a leading
-marker, either `#` or `##`. There must not be any non-whitespace character
-between the start of the line and the leading marker.
-
-For a single-line text statement, all characters after `#` until the end of the
-line are treated as text, except the marker character `#`.
-
-For a multi-line text statement, all characters after the leading `##` and
-before the ending `##` are treated as text, except the marker character `#`.
-The ending `##` must appear at the start of a new line.
-
-Line breaks inside multi-line text are not preserved. Use `\n` to insert a line
-break into the final text value.
-
-Comments inside text are treated as ordinary text.
+marker, either `#` or `##`. The lexical rules for dialog text are described in
+the lexical structure chapter.
 
 **TEXT-ANNOTATION** <i class="fa-solid fa-arrow-right"></i>
 - `~~` TEXT-ANNOTATION-LIST
