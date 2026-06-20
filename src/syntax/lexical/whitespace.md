@@ -1,6 +1,6 @@
 # Whitespace
 
-WHITESPACE <i class="fa-solid fa-arrow-right"></i>
+**WHITESPACE** <i class="fa-solid fa-arrow-right"></i>
 
 - `U+0009` Horizontal tab, '\t'
 - `U+000A` Line feed, '\n'
@@ -14,8 +14,8 @@ WHITESPACE <i class="fa-solid fa-arrow-right"></i>
 - `U+2028` Line separator
 - `U+2029` Paragraph separator
 
-TAB <i class="fa-solid fa-arrow-right"></i> `U+0009` Horizontal tab, '\t'
+**TAB** <i class="fa-solid fa-arrow-right"></i> `U+0009` Horizontal tab, '\t'
 
-LF <i class="fa-solid fa-arrow-right"></i> `U+000A` Line feed, '\n'
+**LF** <i class="fa-solid fa-arrow-right"></i> `U+000A` Line feed, '\n'
 
-CR <i class="fa-solid fa-arrow-right"></i> `U+000D` Carriage return, '\r'
+**CR** <i class="fa-solid fa-arrow-right"></i> `U+000D` Carriage return, '\r'

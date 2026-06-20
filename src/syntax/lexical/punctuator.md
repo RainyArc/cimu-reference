@@ -1,6 +1,6 @@
 # Punctuators
 
-PUNCTUATOR <i class="fa-solid fa-arrow-right"></i>
+**PUNCTUATOR** <i class="fa-solid fa-arrow-right"></i>
 
 - `[` 
 - `]`
