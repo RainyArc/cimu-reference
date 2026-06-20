@@ -12,6 +12,7 @@
 - `*`
 - `/`
 - `%`
+- `^`
 - `+`
 - `-`
 - `<<`
@@ -22,9 +23,12 @@
 - `<=`
 - `==`
 - `!=`
+- `=>`
 - `&&`
 - `||`
 - `!`
+- `?`
+- `??`
 - `:`
 - `;`
 - `=`
@@ -34,5 +38,12 @@
 - `-=`
 - `,`
 - `~`
+- `~~`
 - `&`
+- `|`
 - `$`
+- `@`
+- `'`
+
+When multiple punctuators can start at the same source position, the lexer
+chooses the longest matching punctuator.

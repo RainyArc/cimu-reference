@@ -31,6 +31,8 @@ Keywords below are used in specific context and may not be used as identifiers.
 - async
 - import
 - macro
+- as
+- nil
 
 ## Reserved keywords
 
