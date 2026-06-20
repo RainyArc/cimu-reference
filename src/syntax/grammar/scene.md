@@ -78,8 +78,8 @@ var line = switch mood {
 Continue writing on the next source line.
 Use \n to insert a preserved line break.
 ##
-#Alice#{red:This} is {colored} dialog.
-~~ red: { color: "red" }; $1,$2: { color: "blue" };
+#Alice:#{blue:#{ruby_ka:描}き}かけた地図を開いた。
+~~ blue: { color: "#00AEEF" }; ruby_ka: { ruby: "か" };
 ```
 
 ## Save Points

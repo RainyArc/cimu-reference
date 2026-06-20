@@ -11,7 +11,7 @@ horizontal whitespace. They are used by scene text statements.
 - LINE-START HORIZONTAL-WHITESPACE* `#` DIALOG-CHARACTER? DIALOG-TEXT? { LF | EOF }
 
 **MULTI-LINE-DIALOG** <i class="fa-solid fa-arrow-right"></i>
-- LINE-START HORIZONTAL-WHITESPACE* `##` DIALOG-CHARACTER? DIALOG-TEXT? LF MULTI-LINE-DIALOG-BODY LINE-START `##` HORIZONTAL-WHITESPACE* { LF | EOF }
+- LINE-START HORIZONTAL-WHITESPACE* `##` DIALOG-CHARACTER? DIALOG-TEXT? LF MULTI-LINE-DIALOG-BODY LINE-START `##`
 
 **MULTI-LINE-DIALOG-BODY** <i class="fa-solid fa-arrow-right"></i>
 - DIALOG-TEXT-LINE*
@@ -20,10 +20,18 @@ horizontal whitespace. They are used by scene text statements.
 - DIALOG-TEXT LF
 
 **DIALOG-TEXT** <i class="fa-solid fa-arrow-right"></i>
-- { DIALOG-TEXT-CHAR | DIALOG-ESCAPE }*
+- DIALOG-TEXT-ATOM*
+
+**DIALOG-TEXT-ATOM** <i class="fa-solid fa-arrow-right"></i>
+- DIALOG-TEXT-CHAR
+- DIALOG-ESCAPE
+- INLINE-TEXT-SPAN
+
+**INLINE-TEXT-SPAN** <i class="fa-solid fa-arrow-right"></i>
+- `#{` IDENTIFIER `:` DIALOG-TEXT `}`
 
 **DIALOG-TEXT-CHAR** <i class="fa-solid fa-arrow-right"></i>
-- ^{ LF | EOF | `\` }
+- ^{ LF | EOF | `\` | `#{` | `}` }
 
 **DIALOG-CHARACTER** <i class="fa-solid fa-arrow-right"></i>
 - { DIALOG-CHARACTER-CHAR | `\:` }+ `:`
@@ -34,6 +42,9 @@ horizontal whitespace. They are used by scene text statements.
 **DIALOG-ESCAPE** <i class="fa-solid fa-arrow-right"></i>
 - `\:`
 - `\n`
+- `\#{`
+- `\}`
+- `\\`
 
 **TEXT-ANNOTATION-MARKER** <i class="fa-solid fa-arrow-right"></i>
 - LINE-START HORIZONTAL-WHITESPACE* `~~`
@@ -53,12 +64,19 @@ the line are dialog text.
 
 In a multi-line dialog, all characters after the leading `##` and before the
 ending `##` are dialog text. The ending `##` must appear at the start of a new
-line.
+line. Content after the ending marker is not part of the dialog token.
 
 Source line breaks inside a multi-line dialog are not preserved in the final
 text value. Use `\n` in the dialog text to insert a preserved line break.
 
 Use `\:` to insert a literal colon where a colon would otherwise be parsed as
 the character-name separator.
+
+Use `\#{` to insert a literal `#{`, `\}` to insert a literal `}`, and `\\` to
+insert a literal backslash.
+
+Inline text spans are written as `#{name:text}`. The text inside a span is also
+dialog text, so spans may be nested. Inline spans must be properly nested and
+may not overlap.
 
 Comment markers inside dialog text are treated as ordinary text.
