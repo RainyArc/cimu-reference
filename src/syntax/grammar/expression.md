@@ -27,7 +27,17 @@ a payload uses `TYPE.CASE`; a case with a payload uses `TYPE.CASE(EXPRESSION)`.
 - PRIMARY-EXPRESSION
 - POSTFIX-EXPRESSION `[` EXPRESSION `]`
 - POSTFIX-EXPRESSION `.` IDENTIFIER
+- POSTFIX-EXPRESSION `?.` IDENTIFIER
+- POSTFIX-EXPRESSION `?.` `[` EXPRESSION `]`
 - POSTFIX-EXPRESSION `(` ARGUMENT-EXPRESSION-LIST `)`
+- POSTFIX-EXPRESSION `!`
+
+The `?.` operator performs optional access on a nullable value. If the receiver
+is `Some`, the access is applied to the carried value and the result is wrapped
+as `Some`. If the receiver is `None`, the result is `None`.
+
+The postfix `!` operator forcefully unwraps a nullable value. It evaluates to
+the value carried by `Some`, or raises a runtime error if the value is `None`.
 
 **ARGUMENT-EXPRESSION-LIST** <i class="fa-solid fa-arrow-right"></i>
 - EXPRESSION
@@ -167,6 +177,8 @@ flags | enabled
 flags ^ toggled
 
 name ?? "Unknown"
+name!.length
+user?.profile?.name
 
 var mood = Mood.Happy;
 var ok = Result.Ok("done");
