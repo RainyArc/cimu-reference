@@ -54,10 +54,11 @@
 - UNION-CASE-LIST `,` UNION-CASE
 
 **UNION-CASE** <i class="fa-solid fa-arrow-right"></i>
+- IDENTIFIER
 - IDENTIFIER `:` TYPE
 
 The type in parentheses is the tag enum of the union. Each union case name
-should match a variant of the tag enum.
+should match a variant of the tag enum. A union case may omit its payload type.
 
 Example:
 
