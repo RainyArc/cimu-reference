@@ -7,6 +7,8 @@
 - IDENTIFIER
 - LITERAL
 - `nil`
+- `true`
+- `false`
 - `(` EXPRESSION `)`
 - IF-EXPRESSION
 - SWITCH-EXPRESSION
@@ -124,6 +126,8 @@ An `if` expression evaluates to the value of the selected branch.
 **SWITCH-PATTERN**  <i class="fa-solid fa-arrow-right"></i>
 - LITERAL
 - `nil`
+- `true`
+- `false`
 - `_`
 - `default`
 - IDENTIFIER
@@ -133,6 +137,8 @@ An `if` expression evaluates to the value of the selected branch.
 - IDENTIFIER
 - LITERAL
 - `nil`
+- `true`
+- `false`
 - `_`
 
 When switching over an enum, an identifier pattern matches an enum variant.

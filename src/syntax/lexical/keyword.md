@@ -34,6 +34,8 @@ Keywords below are used in specific context and may not be used as identifiers.
 - macro
 - as
 - nil
+- true
+- false
 
 ## Reserved keywords
 
