@@ -18,6 +18,7 @@
 - `bigint`
 - `float`
 - `bool`
+- `char`
 - `str`
 - `void`
 

@@ -4,6 +4,7 @@
 
 - INTEGER-LITERAL
 - FLOATING-LITERAL
+- CHARACTER-LITERAL
 - STRING-LITERAL
 
 ## Integer
@@ -43,6 +44,14 @@ HEX-DIGIT* `.` HEX-DIGIT+ | HEX-DIGIT+ `.`
 { `p` | `P` } SIGN? HEX-DIGIT+
 
 ## String
+**CHARACTER-LITERAL** <i class="fa-solid fa-arrow-right"></i>
+- `'` CHARACTER-CONTENT `'`
+
+**CHARACTER-CONTENT** <i class="fa-solid fa-arrow-right"></i>
+- ^{ `'` | `\` | LF | EOF }
+- ASCII-ESCAPE
+- UNICODE-ESCAPE
+
 **STRING-LITERAL** <i class="fa-solid fa-arrow-right"></i>
 `"` { ^{ `"` | `\` } | ASCII-ESCAPE | UNICODE-ESCAPE | QUOTE-ESCAPE | STRING-CONTINUE }* `"`
 
