@@ -21,6 +21,8 @@
 - `str`
 - `void`
 
+Primitive type names are predeclared type names. They are not lexical keywords.
+
 A type followed by `?` is nullable. For example, `str?` is either a `str` value
 or `nil`.
 
