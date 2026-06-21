@@ -24,11 +24,11 @@
 
 Primitive type names are predeclared type names. They are not lexical keywords.
 
-A type followed by `?` is nullable. For example, `str?` is either a `str` value
-or `nil`.
+A type followed by `?` is nullable. Nullable types are modeled as built-in
+tagged unions with `Some` and `None` cases.
 
 An array type is written by appending `[]` to the element type. For example,
 `str[]` is an array of `str` values, and `str?[]` is an array of nullable `str`
 values.
 
-The `nil` value may only inhabit nullable types.
+The `nil` value constructs the `None` case of a nullable type.

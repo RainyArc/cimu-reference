@@ -91,8 +91,8 @@
 - LOGICAL-OR-EXPRESSION
 - NIL-COALESCING-EXPRESSION `??` LOGICAL-OR-EXPRESSION
 
-The `??` operator unwraps a nullable value or evaluates to the expression on
-its right-hand side when the left-hand side is `nil`.
+The `??` operator evaluates to the value carried by `Some`, or evaluates to the
+expression on its right-hand side when the left-hand side is the `None` case.
 
 **ASSIGNMENT-EXPRESSION**  <i class="fa-solid fa-arrow-right"></i>
 - NIL-COALESCING-EXPRESSION
@@ -142,8 +142,9 @@ An `if` expression evaluates to the value of the selected branch.
 - `_`
 
 When switching over an enum, an identifier pattern matches an enum variant.
-When switching over a tagged union, `IDENTIFIER ( PATTERN )` matches the union
-case with that tag and destructures its payload.
+When switching over a tagged union, an identifier pattern matches a case without
+a payload, and `IDENTIFIER ( PATTERN )` matches a case with a payload and
+destructures that payload.
 
 **BLOCK-EXPRESSION**  <i class="fa-solid fa-arrow-right"></i>
 - `{` STATEMENT-LIST? EXPRESSION? `}`
@@ -156,6 +157,11 @@ flags | enabled
 flags ^ toggled
 
 name ?? "Unknown"
+
+var display = switch name {
+    Some(value) => value,
+    None => "Unknown",
+};
 
 var title = if unlocked {
     "Extra"
