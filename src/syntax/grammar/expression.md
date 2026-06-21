@@ -10,9 +10,18 @@
 - `true`
 - `false`
 - `(` EXPRESSION `)`
+- VARIANT-EXPRESSION
 - IF-EXPRESSION
 - SWITCH-EXPRESSION
 - MACRO-INVOCATION
+
+**VARIANT-EXPRESSION** <i class="fa-solid fa-arrow-right"></i>
+- IDENTIFIER `.` IDENTIFIER
+- IDENTIFIER `.` IDENTIFIER `(` EXPRESSION `)`
+
+A variant expression constructs an enum value or a tagged union value. The
+identifier before `.` must resolve to an enum or union type name. A case without
+a payload uses `TYPE.CASE`; a case with a payload uses `TYPE.CASE(EXPRESSION)`.
 
 **POSTFIX-EXPRESSION** <i class="fa-solid fa-arrow-right"></i> 
 - PRIMARY-EXPRESSION
@@ -157,6 +166,10 @@ flags | enabled
 flags ^ toggled
 
 name ?? "Unknown"
+
+var mood = Mood.Happy;
+var ok = Result.Ok("done");
+var none = Result.None;
 
 var display = switch name {
     Some(value) => value,

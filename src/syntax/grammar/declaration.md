@@ -66,11 +66,13 @@ Example:
 enum ResultTag {
     Ok,
     Err,
+    None,
 }
 
 union Result(ResultTag) {
     Ok: str,
     Err: Error,
+    None,
 }
 ```
 
