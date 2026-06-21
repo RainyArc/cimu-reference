@@ -16,3 +16,5 @@
         - [Expressions](./syntax/grammar/expression.md)
         - [Scene Grammar](./syntax/grammar/scene.md)
         - [Macros](./syntax/grammar/macro.md)
+- [Type System](./type-system/intro.md)
+    - [Types](./type-system/types.md)
