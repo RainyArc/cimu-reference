@@ -45,12 +45,6 @@
 
 **ENUM-VARIANT** <i class="fa-solid fa-arrow-right"></i>
 - IDENTIFIER
-- IDENTIFIER `(` TYPE-LIST? `)`
-- IDENTIFIER `{` FIELD-LIST? `}`
-
-**TYPE-LIST** <i class="fa-solid fa-arrow-right"></i>
-- TYPE
-- TYPE-LIST `,` TYPE
 
 **UNION-ITEM** <i class="fa-solid fa-arrow-right"></i>
 - `union` IDENTIFIER `(` TYPE `)` `{` UNION-CASE-LIST? `}`
