@@ -98,10 +98,11 @@ a payload uses `TYPE.CASE`; a case with a payload uses `TYPE.CASE(EXPRESSION)`.
 
 **NIL-COALESCING-EXPRESSION**  <i class="fa-solid fa-arrow-right"></i>
 - LOGICAL-OR-EXPRESSION
-- NIL-COALESCING-EXPRESSION `??` LOGICAL-OR-EXPRESSION
+- LOGICAL-OR-EXPRESSION `??` NIL-COALESCING-EXPRESSION
 
 The `??` operator evaluates to the value carried by `Some`, or evaluates to the
 expression on its right-hand side when the left-hand side is the `None` case.
+The `??` operator is right-associative.
 
 **ASSIGNMENT-EXPRESSION**  <i class="fa-solid fa-arrow-right"></i>
 - NIL-COALESCING-EXPRESSION
