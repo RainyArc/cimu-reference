@@ -15,6 +15,7 @@
 
 **PRIMITIVE-TYPE** <i class="fa-solid fa-arrow-right"></i>
 - `int`
+- `bigint`
 - `float`
 - `bool`
 - `str`
